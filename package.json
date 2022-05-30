@@ -1,0 +1,25 @@
+{
+  "name": "react-native-slide-to-confirm",
+  "version": "1.0.0",
+  "description": "Slide to confirm for React Native",
+  "main": "SlideToConfirm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KananIslamzada/react-native-slide-to-confirm.git"
+  },
+  "keywords": [
+    "slide-to-confirm",
+    "react-native-slide-to-confirm",
+    "react-native",
+    "slide-to-confirm-button"
+  ],
+  "author": "Kanan Islamzada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KananIslamzada/react-native-slide-to-confirm/issues"
+  },
+  "homepage": "https://github.com/KananIslamzada/react-native-slide-to-confirm#readme"
+}
