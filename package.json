@@ -1,5 +1,5 @@
 {
-  "name": "react-native-slide-to-confirm",
+  "name": "rn-slide-to-confirm",
   "version": "1.0.0",
   "description": "Slide to confirm for React Native",
   "main": "SlideToConfirm.js",
