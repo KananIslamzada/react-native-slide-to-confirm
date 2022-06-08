@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Animated, Pressable, PanResponder, Dimensions } from 'react-native';
-import { Feather } from '@expo/vector-icons'
+import Feather from 'react-native-vector-icons/Feather'
 
 const IS_NATIVE_DRIVER = true;
 const SlideToConfirm = (
