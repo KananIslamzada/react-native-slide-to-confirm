@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Animated, Pressable, PanResponder, Dimensions } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
+import { Feather } from '@expo/vector-icons'
 
 const IS_NATIVE_DRIVER = true;
 const SlideToConfirm = (
@@ -26,7 +26,8 @@ const SlideToConfirm = (
         onSlideNotConfirmed,
         sliderButtonComponent = null,
         ballPadding = 0,
-        disableOnConfirmed = false
+        disableOnConfirmed = false,
+        state = false
     }) => {
     const pan = useRef(new Animated.Value(0)).current;
     const textAnim = useRef(new Animated.Value(0)).current;
@@ -135,6 +136,37 @@ const SlideToConfirm = (
         }
     }, [unconfimredTipText, confirmedTipText, tipTextSlideAnimEnable])
 
+    useEffect(() => {
+        if (state) {
+            Animated.spring(pan, {
+                toValue: sliderWidth - sliderBallWidth - ballPadding * 2,
+                useNativeDriver: IS_NATIVE_DRIVER,
+                restSpeedThreshold: 2000
+            }).start(({ finished }) => {
+                if (finished) {
+                    if (disableOnConfirmed) {
+                        setDisable(true)
+                    }
+                    onSlideConfirmed?.()
+                }
+            })
+        } else {
+            Animated.timing(pan, {
+                toValue: 0,
+                duration: goToBackDuration,
+                useNativeDriver: IS_NATIVE_DRIVER
+            }).start(({ finished }) => {
+                if (finished) {
+                    onSlideNotConfirmed?.()
+                    if (tipAnimationEnable) {
+                        slidePressed();
+                    };
+                };
+            });
+        }
+    }, [state])
+
+
     return (
         <View style={[{ backgroundColor: defaultColor }, (sliderStyle || null), { paddingLeft: ballPadding, paddingRight: ballPadding }]} >
             <Animated.View   {...panResponder.panHandlers} style={{ zIndex: 1, transform: [{ translateX: pan }] }}>
@@ -188,6 +220,7 @@ const styles = StyleSheet.create({
         width: 10,
         position: 'absolute',
     }
+
 });
 
 export default SlideToConfirm;

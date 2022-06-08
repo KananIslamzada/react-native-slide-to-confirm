@@ -1,6 +1,6 @@
 {
   "name": "rn-slide-to-confirm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Slide to confirm for React Native",
   "main": "SlideToConfirm.js",
   "scripts": {
@@ -14,7 +14,12 @@
     "slide-to-confirm",
     "react-native-slide-to-confirm",
     "react-native",
-    "slide-to-confirm-button"
+    "slide-to-confirm-button",
+    "slide-button",
+    "swipe-to-confirm",
+    "swipe",
+    "slide",
+    "swipe-button"
   ],
   "author": "Kanan Islamzada",
   "license": "ISC",
