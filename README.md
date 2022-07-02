@@ -21,7 +21,7 @@ Slide to confirm button for react native
 ```javascript
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import SlideToConfirm from './SlideToConfirm';
+import SlideToConfirm from 'rn-slide-to-confirm';
 
 const Slider = () => {
     const [sliderState, setSliderState] = useState(false);
