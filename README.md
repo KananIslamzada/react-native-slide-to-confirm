@@ -30,7 +30,7 @@ const Slider = () => {
         <View>
             <SlideToConfirm
                 unconfimredTipText={"Slide to confirm"}
-                unconfirmedtTipTextStyle={{
+                unconfirmedTipTextStyle={{
                     color: "white",
                     fontSize: 18
                 }}
@@ -83,6 +83,6 @@ export default Slider;
 | unconfimredTipText |string | shown text in slider before confirmed (while slider is unconfimred). default is "" |
 | confirmedTipText |string | shown text in slider while slider is confirmed. default is ""|
 | confirmedTipTextStyle |style |confirmed tip text style |
-| unconfirmedtTipTextStyle |style | unconfirmed tip text style |
+| unconfirmedTipTextStyle |style | unconfirmed tip text style |
 | sliderStyle |style | custom slider container style. Don't forget making overflow:"hidden" in custom style. because inside component of slider can go out of box |
 | sliderButtonComponent |component | custom slider button component. you can create your custom inside component of slider container |
