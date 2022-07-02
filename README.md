@@ -1,5 +1,5 @@
 
-# rn-slide-to-confirm v1.0.2
+# rn-slide-to-confirm
 
 Slide to confirm button for react native
 
