@@ -5,29 +5,29 @@ import Feather from 'react-native-vector-icons/Feather'
 const IS_NATIVE_DRIVER = true;
 const SlideToConfirm = (
     {
-        tipAnimationEnable = true,
-        tipTextSlideAnimEnable = true,
-        defaultColor = "#5920BC",
-        defaultIconSize = 30,
-        sliderStyle,
-        unconfirmedtTipTextStyle,
-        confirmedTipTextStyle,
-        unconfimredTipText = "",
-        confirmedTipText = "",
-        sliderTipDuration = 300,
-        sliderTipDistanceFromLeft = 40,
-        goToBackDuration = 300,
-        confirmedPercent = 0.8,
         onSlide,
         onSlideEnd,
         onSlideRelease,
         onSlideBegin,
         onSlideConfirmed,
         onSlideNotConfirmed,
-        sliderButtonComponent = null,
+        defaultColor = "#5920BC",
+        defaultIconSize = 30,
+        tipAnimationEnable = true,
+        tipTextSlideAnimEnable = true,
+        sliderTipDuration = 300,
+        sliderTipDistanceFromLeft = 40,
+        goToBackDuration = 300,
+        confirmedPercent = 0.8,
         ballPadding = 0,
         disableOnConfirmed = false,
-        state = false
+        state = false,
+        unconfimredTipText = "",
+        confirmedTipText = "",
+        confirmedTipTextStyle,
+        unconfirmedTipTextStyle,
+        sliderButtonComponent = null,
+        sliderStyle,
     }) => {
     const pan = useRef(new Animated.Value(0)).current;
     const textAnim = useRef(new Animated.Value(0)).current;
@@ -184,7 +184,7 @@ const SlideToConfirm = (
             </Animated.View>
             {(!!unconfimredTipText.length && !!confirmedTipText.length) &&
                 <>
-                    <Animated.Text style={[styles.tipText, { opacity: slideOpacity }, unconfirmedtTipTextStyle]} >{unconfimredTipText}</Animated.Text>
+                    <Animated.Text style={[styles.tipText, { opacity: slideOpacity }, unconfirmedTipTextStyle]} >{unconfimredTipText}</Animated.Text>
                     <Animated.Text style={[styles.tipText, { opacity: checkOpacity }, confirmedTipTextStyle]} >{confirmedTipText}</Animated.Text>
                 </>
             }
